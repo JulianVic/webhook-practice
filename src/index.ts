@@ -9,7 +9,7 @@ app.post("/github-event", (req: Request, res: Response) => {
   const { body } = req;
   const { action, sender, repository, issue, ref} = body
   const event = req.get('X-GitHub-Event');
-  let message;
+  let message = "";
 
   switch (event) {
     case "star":
